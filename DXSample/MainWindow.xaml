@@ -7,10 +7,14 @@
         Name="win"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        <StreamGeometry x:Key="LeftArrow">M0,25 L25,0 25,13 50,13 50,37 25,37 25,50z</StreamGeometry>
+        <!--<StreamGeometry x:Key="LeftArrow">M0,25 L25,0 25,13 50,13 50,37 25,37 25,50z</StreamGeometry>
         <StreamGeometry x:Key="RightArrow">M50,25 L25,0 25,13 0,13 0,37 25,37 25,50z</StreamGeometry>
         <StreamGeometry x:Key="UpArrow">M25,0 L0,25 13,25 13,50 37,50 37,25 50,25z</StreamGeometry>
-        <StreamGeometry x:Key="DownArrow">M25,50 L0,25 13,25 13,0 37,0 37,25 50,25z</StreamGeometry>
+        <StreamGeometry x:Key="DownArrow">M25,50 L0,25 13,25 13,0 37,0 37,25 50,25z</StreamGeometry>-->
+        <StreamGeometry x:Key="LeftArrow">M0,25 L25,0 25,13 50,13 50,37 25,37 25,50z</StreamGeometry>
+        <StreamGeometry x:Key="RightArrow">M50,25 L25,0 25,13 0,13 0,37 25,37 25,50z</StreamGeometry>
+        <StreamGeometry x:Key="UpArrow">M0.5,0.5L100,0.5 100,0 1,100 0.5,100z</StreamGeometry>
+        <StreamGeometry x:Key="DownArrow">M0.5,0.5 L100,0.5 100,0 1.0,100 0.5,100 z</StreamGeometry>
     </Window.Resources>
     <Grid>
         <Grid.Resources>
@@ -21,18 +25,18 @@
                     </Setter.Value>
                 </Setter>-->
                 <Setter Property="Height" Value="30"/>
-                <Setter Property="Width" Value="30"/>
+                <Setter Property="Width" Value="25"/>
                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="dxlc:GroupBoxButton">
                             <dx:Container>
-                                <!--<TextBlock x:Name="UnminimizeElement" Text="▲" FontSize="22"/>
-                                <TextBlock x:Name="MinimizeElement" Text="▼" FontSize="22"/>
-                                <TextBlock x:Name="MaximizeElement" Text="▲" FontSize="22"/>
-                                <TextBlock x:Name="UnmaximizeElement" Text="▼" FontSize="22"/>-->
-                                
+                                <TextBlock x:Name="UnminimizeElement" Text="▲" FontSize="20" TextAlignment="Center"/>
+                                <TextBlock x:Name="MinimizeElement" Text="▼" FontSize="20" TextAlignment="Center"/>
+                                <TextBlock x:Name="MaximizeElement" Text="▲" FontSize="20" TextAlignment="Center"/>
+                                <TextBlock x:Name="UnmaximizeElement" Text="▼" FontSize="20" TextAlignment="Center"/>
+
                                 <!--
                                 <Path x:Name="UnminimizeElement" Stretch="Fill" Fill="Blue" RenderTransformOrigin="0.5,0.5" Data="{StaticResource UpArrow}">
                                     <Path.RenderTransform>
@@ -61,10 +65,54 @@
                                 <Path x:Name="UnmaximizeElement"  Fill="Black" Data="M 0 10 L 10 0 L 10 20 Z"/>
                                 <Path x:Name="MaximizeElement"  Fill="Black" Data="M 0 0 L 10 10 L 0 20 Z"/>-->
 
-                                <Label x:Name="UnminimizeElement" FontFamily="Marlett" FontSize="20" Content="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <!--<Label x:Name="UnminimizeElement" FontFamily="Marlett" FontSize="20" Content="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                 <Label x:Name="MinimizeElement" FontFamily="Marlett" FontSize="20" Content="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                 <Label x:Name="UnmaximizeElement" FontFamily="Marlett" FontSize="20" Content="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                <Label x:Name="MaximizeElement" FontFamily="Marlett" FontSize="20" Content="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                <Label x:Name="MaximizeElement" FontFamily="Marlett" FontSize="20" Content="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>-->
+
+                                <!--<Path x:Name="UnminimizeElement" Fill="Black" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="25" Data="M0,0 L100,0 100,0.3 0.3,100 0,100 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform AngleX="10" AngleY="10"/>
+                                            <RotateTransform Angle="45"/>
+                                            <TranslateTransform Y="12"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path x:Name="MinimizeElement" Fill="Black" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" Data="M0,0 L100,0 100,0.3 0.3,100 0,100 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform AngleX="10" AngleY="10"/>
+                                            <RotateTransform Angle="225"/>
+                                            <TranslateTransform Y="-8"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+
+                                <Path x:Name="MaximizeElement" Fill="Black" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="25" Data="M0,0 L100,0 100,0.3 0.3,100 0,100 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform AngleX="10" AngleY="10"/>
+                                            <RotateTransform Angle="45"/>
+                                            <TranslateTransform Y="12"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path x:Name="UnmaximizeElement" Fill="Black" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" Data="M0,0 L100,0 100,0.3 0.3,100 0,100 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform AngleX="10" AngleY="10"/>
+                                            <RotateTransform Angle="225"/>
+                                            <TranslateTransform Y="-8"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>-->
+
+
                             </dx:Container>
                         </ControlTemplate>
                     </Setter.Value>
